@@ -1,0 +1,61 @@
+/* Base Navbar Style */
+#navbar {
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FFBB00;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  left: 0;
+}
+
+.nav-link:hover {
+  color: #FFBB00;
+}
+
+#navbar.scrolled {
+  background-image: linear-gradient(to right, #FFBB00, black);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#navbar.scrolled .nav-link {
+  color: white;
+}
+
+#navbar.scrolled .nav-link:hover {
+  color: #FFBB00;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link.hover-left::after {
+  transform-origin: left;
+}
+
+.nav-link.hover-right::after {
+  transform-origin: right;
+}
+
+.lg\:hidden {
+  display: block;
+}
